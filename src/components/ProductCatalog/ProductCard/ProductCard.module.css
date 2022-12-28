@@ -1,0 +1,46 @@
+.cardMeta div{
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.cardMeta span{
+    height: 200px;
+    width: 200px;
+}
+
+.cardMeta :global(.ant-card-meta-title){
+    font-size: 22px;
+}
+
+.cardMeta img{
+    object-fit: contain;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.card :global(.ant-avatar) {
+    border-radius: 10px;
+}
+
+.icon svg {
+    color: black;
+    margin-right: 10px;
+    min-height: 45px;
+    min-width: 45px;
+}
+
+.icon :hover{
+    color: green;
+}
+
+.iconRow {
+    background-color: white;
+    justify-content: right;
+    border-radius: 5px;
+}

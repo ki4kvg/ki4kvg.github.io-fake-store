@@ -1,0 +1,64 @@
+.card {
+    min-width: 850px;
+}
+
+.cardMeta div {
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.cardMeta span {
+    min-height: 200px;
+    min-width: 200px;
+}
+
+.cardMeta :global(.ant-card-meta-title) {
+    font-size: 22px;
+}
+
+.cardMeta img {
+    object-fit: contain;
+}
+
+.card {
+    padding: 10px;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.card :global(.ant-avatar) {
+    border-radius: 10px;
+}
+
+.cardRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkBox{
+    font-size: 20px;
+    padding-left: 20px;
+}
+
+.checkBox span {
+    min-height: 25px;
+    min-width: 25px;
+}
+
+.checkBox input {
+    min-height: 25px;
+    min-width: 25px;
+}
+
+.icon svg {
+    color: black;
+    min-height: 45px;
+    min-width: 45px;
+}
+
+.icon {
+    margin-left: 10px;
+    margin-top: 50px;
+}

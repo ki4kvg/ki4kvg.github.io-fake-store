@@ -1,0 +1,70 @@
+.layout {
+    padding: 40px;
+}
+
+.title{
+    font-size: 30px;
+}
+
+.category {
+    font-size: 14px;
+    text-transform: capitalize;
+    text-decoration: underline;
+}
+
+.mainInfo {
+    background-color: white;
+    padding: 25px;
+    margin-top: 25px;
+}
+
+.imageBlock {
+    justify-content: center;
+    padding-top: 25px;
+}
+
+.image {
+    max-height: 500px;
+}
+
+.description {
+    padding-top: 25px;
+    font-size: 24px;
+}
+
+.priceRateCol {
+    padding: 25px;
+}
+
+.rate {
+    font-size: 24px;
+}
+
+.rateNumber {
+    padding-right: 15px;
+}
+
+.rateCount {
+    font-size: 24px;
+}
+
+.price {
+    padding-top: 25px;
+    font-size: 24px;
+}
+
+.icon svg {
+    color: black;
+    margin-right: 10px;
+    min-height: 80px;
+    min-width: 80px;
+}
+
+.addToCartCol :global(.ant-row){
+    justify-content: center;
+}
+
+.alert {
+    text-align: center;
+}
+

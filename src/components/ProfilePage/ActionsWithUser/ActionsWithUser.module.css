@@ -1,0 +1,4 @@
+.regCol :global(.ant-tabs-tabpane) {
+    max-width: 50%;
+}
+

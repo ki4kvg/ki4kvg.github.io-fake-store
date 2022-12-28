@@ -1,0 +1,28 @@
+.layoutBlock {
+    min-height: 100vh !important;
+}
+
+.content {
+    /*background: linear-gradient(#d06255, #ec985c);*/
+    min-height: calc(100vh - 80px);
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+
+.spinner {
+    margin-top: 20%;
+}
+
+.icon svg {
+    color: #56213c;
+    min-height: 45px;
+    min-width: 45px;
+    margin: 10px;
+}
+
+.iconRow {
+    display: flex;
+    justify-content: right;
+}
