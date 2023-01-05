@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/ki4kvg.github.io-fake-store/static/css/main.de66c7fd.css",
-    "main.js": "/ki4kvg.github.io-fake-store/static/js/main.ddfa6931.js",
+    "main.css": "/ki4kvg.github.io-fake-store/static/css/main.b520c0dc.css",
+    "main.js": "/ki4kvg.github.io-fake-store/static/js/main.e25bca36.js",
     "index.html": "/ki4kvg.github.io-fake-store/index.html",
-    "main.de66c7fd.css.map": "/ki4kvg.github.io-fake-store/static/css/main.de66c7fd.css.map",
-    "main.ddfa6931.js.map": "/ki4kvg.github.io-fake-store/static/js/main.ddfa6931.js.map"
+    "main.b520c0dc.css.map": "/ki4kvg.github.io-fake-store/static/css/main.b520c0dc.css.map",
+    "main.e25bca36.js.map": "/ki4kvg.github.io-fake-store/static/js/main.e25bca36.js.map"
   },
   "entrypoints": [
-    "static/css/main.de66c7fd.css",
-    "static/js/main.ddfa6931.js"
+    "static/css/main.b520c0dc.css",
+    "static/js/main.e25bca36.js"
   ]
 }
