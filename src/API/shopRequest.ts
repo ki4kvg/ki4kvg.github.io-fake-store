@@ -3,9 +3,6 @@ import {cartType, productType, userType} from "../store/tsTypes";
 
 const instance = axios.create({
     baseURL: 'https://fakestoreapi.com/',
-    // headers: {
-    //     authorization: `Bearer ${token}`
-    // }
 });
 
 export const getProductsRequest = (limit: number = 20) => {
@@ -47,7 +44,6 @@ export const addProductsRequest = (product: productType) => {
 
 
 export const updateProductRequest = ({id, ...product}: productType) => {
-    console.log(product)
     return instance.put<productType>(`products/${id}`, product)
         .then(response => {
             return response.data;
@@ -78,7 +74,7 @@ export const getOneCartRequest = (id: string | number | undefined) => {
 }
 
 export const getUserCartRequest = (userId: string | number | undefined) => {
-    return instance.get<cartType>(`carts/user/`)
+    return instance.get<cartType>(`carts/user/${userId}`)
         .then(response => {
             return response.data
         })
@@ -87,7 +83,6 @@ export const getUserCartRequest = (userId: string | number | undefined) => {
 export const addCartRequest = (cart: cartType) => {
     return instance.post<cartType>(`carts`, cart)
         .then(response => {
-            console.log(response)
             return response.data
         })
 }
@@ -95,7 +90,6 @@ export const addCartRequest = (cart: cartType) => {
 export const updateCartRequest = ({id, ...cart}: cartType) => {
     return instance.put(`carts/${id}`, cart)
         .then(response => {
-            console.log(response)
             return response.data
         })
 }

@@ -16,7 +16,7 @@ const RegistrationModal = ({setIsModalRegisterOpen, isModalRegisterOpen, openNot
                 onFinish(values);
             })
             .catch((info) => {
-                console.log('Validate Failed:', info);
+                openNotification("Registration", `Error has occurred ${info}`, 'error')
             });
     };
 

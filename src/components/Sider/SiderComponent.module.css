@@ -20,32 +20,7 @@
     margin-right: 24px;
 }
 
-.sider :global(.ant-layout-sider-children){
-    background: linear-gradient(#d06255, #ec985c);
-}
-
 .checkAllRadio {
     padding-top: 15px;
     padding-bottom: 15px;
 }
-
-
-.color1 {color: #d06255;}
-.color2 {color: #d98d5c;}
-.color3 {color: #e8c386;}
-.color4 {color: #f9f6c1;}
-.color5 {color: #fffff2;}
-
-
-.color1 {color: #56213c;}
-.color2 {color: #742d44;}
-.color3 {color: #a14552;}
-.color4 {color: #db6a5d;}
-.color5 {color: #ec985c;}
-
-
-.color1 {color: #df6f7a;}
-.color2 {color: #e7887b;}
-.color3 {color: #f4b090;}
-.color4 {color: #f8d6b3;}
-.color5 {color: #f8eac8;}

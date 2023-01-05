@@ -1,9 +1,9 @@
 import {useAppDispatch, useAppSelector} from "../../../../Hooks/hooks";
 import React, {useState} from "react";
-import {Button, Col, Form, Modal, Row, Select} from "antd";
-import {deleteProductAction, getProductAction} from "../../../../store/actions/productActions";
+import {Button, Col, Form, Modal, Row} from "antd";
+import {deleteProductAction} from "../../../../store/actions/productActions";
 import {openNotification} from "../../../Notification/Notification";
-import st from "../DeleteProductForm/DeleteProductTab.module.css";
+import st from "./DeleteProductTab.module.css";
 import {SelectorComponent} from "../../../Selector/SelectorComponent";
 
 export const DeleteProductForm = () => {
@@ -29,13 +29,12 @@ export const DeleteProductForm = () => {
                 onFinish();
             })
             .catch((info) => {
-                openNotification("Delete product", `You typed wrong confirmation`, 'error')
-                console.log("Validate fail", info)
+                openNotification("Delete product", `You typed wrong confirmation ${info}`, 'error')
             });
     };
 
     const onFinish = () => {
-        dispatch(deleteProductAction(product?.id)).then(res => {
+        dispatch(deleteProductAction(product?.id)).then(() => {
                 openNotification("Delete product", `Delete have been completed successfully.`, 'success')
                 setIsModalOpen(false);
             }

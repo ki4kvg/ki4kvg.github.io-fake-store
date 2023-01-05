@@ -1,4 +1,4 @@
-import {cartType, productType, userType} from "../tsTypes";
+import {productType, userType} from "../tsTypes";
 import {createAsyncThunk} from '@reduxjs/toolkit'
 import {
     addCartRequest,
@@ -197,9 +197,7 @@ export const addUserAction = createAsyncThunk(
     'products/addUserAction',
     async (user: userType, thunkAPI) => {
         try {
-            const res = await addUserRequest(user)
-            console.log(res)
-            return res
+            return await addUserRequest(user)
         } catch (e: any) {
             return thunkAPI.rejectWithValue(e.message)
         }

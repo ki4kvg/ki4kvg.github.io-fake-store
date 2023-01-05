@@ -1,4 +1,4 @@
-import {Checkbox, Form, Input, Modal} from "antd";
+import {Form, Input, Modal} from "antd";
 import st from "./LoginModal.module.css"
 import {useAppDispatch} from "../../Hooks/hooks";
 import {authUserAction} from "../../store/actions/productActions";
@@ -15,10 +15,9 @@ const LoginModal = ({setUsername, setIsModalLoginOpen, isModalLoginOpen, openNot
             .then((values) => {
                 form.resetFields();
                 onFinish(values);
-            })
-            .catch((info) => {
-                console.log('Validate Failed:', info);
-            });
+            }).catch((info) => {
+            openNotification("Login", `Error has occurred ${info}`, 'error')
+        });
     };
 
     const handleCancel = () => {
@@ -37,18 +36,20 @@ const LoginModal = ({setUsername, setIsModalLoginOpen, isModalLoginOpen, openNot
     };
 
     return (
-        <Modal title="Login"
-               okText="Login"
-               cancelText="Cancel"
-               open={isModalLoginOpen}
-               onOk={handleOk}
-               onCancel={handleCancel}>
+        <Modal
+            className={st.modal}
+            title="Login"
+            okText="Login"
+            cancelText="Cancel"
+            open={isModalLoginOpen}
+            onOk={handleOk}
+            onCancel={handleCancel}>
             <Form
                 form={form}
                 className={st.form}
                 name="basic"
-                labelCol={{span: 8}}
-                wrapperCol={{span: 16}}
+                labelCol={{span: 6}}
+                // wrapperCol={{span: 16}}
                 initialValues={{remember: true}}
                 autoComplete="off"
             >
@@ -67,10 +68,6 @@ const LoginModal = ({setUsername, setIsModalLoginOpen, isModalLoginOpen, openNot
                     rules={[{required: true, message: 'Please input your password!'}]}
                 >
                     <Input.Password className={st.input}/>
-                </Form.Item>
-
-                <Form.Item name="remember" valuePropName="checked" wrapperCol={{offset: 8, span: 16}}>
-                    <Checkbox>Remember me</Checkbox>
                 </Form.Item>
             </Form>
         </Modal>

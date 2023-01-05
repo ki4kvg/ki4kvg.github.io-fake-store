@@ -3,12 +3,15 @@
 }
 
 .content {
-    /*background: linear-gradient(#d06255, #ec985c);*/
     min-height: calc(100vh - 80px);
     padding: 10px;
     margin-left: 10px;
     margin-right: 10px;
     border-radius: 10px;
+}
+
+.search{
+    margin: 10px 0 5px 0;
 }
 
 .spinner {

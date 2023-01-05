@@ -36,7 +36,7 @@ export const authSlice = createSlice({
         builder.addCase(logOutUserAction.pending, (state) => {
             state.isLoading = true
         })
-        builder.addCase(logOutUserAction.fulfilled, (state, action) => {
+        builder.addCase(logOutUserAction.fulfilled, (state) => {
             state.isLoading = false
             state.error = ''
             state.token = null
@@ -49,5 +49,3 @@ export const authSlice = createSlice({
     }
 
 })
-
-export default authSlice.reducer;

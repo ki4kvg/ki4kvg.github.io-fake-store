@@ -1,7 +1,7 @@
 import React from "react";
 import {Tabs} from "antd";
-import {ChangeUser} from "../../UserProfileForms/User/ChangeUser/ChangeUser";
-import {DeleteUser} from "../../UserProfileForms/User/DeleteUser/DeleteUser";
+import {ChangeUser} from "../UsersActionForm/ChangeUser/ChangeUser";
+import {DeleteUser} from "../UsersActionForm/DeleteUser/DeleteUser";
 
 const items = [
     {
@@ -14,12 +14,11 @@ const items = [
     },
 ]
 
-export const ActionsWithUser = () => {
+export const UserTabs = () => {
     return (
         <Tabs
             defaultActiveKey="0"
             tabPosition="top"
-            style={{height: 220}}
             items={
                 items.map((el, i) => {
                     const id = String(i);

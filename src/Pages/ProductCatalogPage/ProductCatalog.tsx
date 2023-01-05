@@ -3,12 +3,12 @@ import {Content} from "antd/es/layout/layout";
 import React, {useEffect, useState} from "react";
 import {useAppDispatch, useAppSelector} from "../../Hooks/hooks";
 import {getProductsAction} from "../../store/actions/productActions";
-import ProductCard from "./ProductCard/ProductCard";
+import ProductCard from "../../components/ProductCatalog/ProductCard/ProductCard";
 import st from "./ProductCatalog.module.css"
 import {productType} from "../../store/tsTypes";
-import {SiderComponent} from "../Sider/SiderComponent";
-import NotFoundPage from "../../Pages/NotFoundPage/NotFoundPage";
-import {Spinner} from "../Spinner/Spinner";
+import {SiderComponent} from "../../components/Sider/SiderComponent";
+import NotFoundComponent from "../../components/NotFoundComponent/NotFoundComponent";
+import {Spinner} from "../../components/Spinner/Spinner";
 
 const ProductCatalog = () => {
     const dispatch = useAppDispatch()
@@ -27,7 +27,7 @@ const ProductCatalog = () => {
                 return p.title.toLowerCase().includes(searchValue.toLowerCase())
             })
             if (filteredProds.length === 0) {
-                return <NotFoundPage/>
+                return <NotFoundComponent/>
             }
             return filteredProds.map((p: productType) => <ProductCard key={p.id} p={p}/>)
         }
@@ -51,7 +51,7 @@ const ProductCatalog = () => {
                     size="large"
                     onChange={onSearch}
                 />
-                <Row className={st.CardRow}
+                <Row
                      justify={"center"}
                      gutter={16}>
                     {isLoading ? <Spinner/> : filteredProds}

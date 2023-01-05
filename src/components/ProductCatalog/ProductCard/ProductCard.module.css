@@ -17,10 +17,6 @@
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    padding: 10px;
-    justify-content: center;
     margin-top: 15px;
 }
 
@@ -29,20 +25,21 @@
 }
 
 .icon svg {
+    transition-duration: 0.3s;
+    border-radius: 6px;
+    padding: 5px;
     color: black;
-    margin-right: 10px;
-    min-height: 40px;
-    min-width: 40px;
+    min-height: 38px;
+    min-width: 38px;
 }
 
-.icon :hover{
-    color: green;
+.icon :hover {
+    background-color: green;
+    color: whitesmoke;
 }
 
-.iconRow {
-    background-color: white;
-    justify-content: right;
-    border-radius: 5px;
+.cartExtra{
+    padding: 7px 0;
 }
 
 @media (max-width: 480px) {

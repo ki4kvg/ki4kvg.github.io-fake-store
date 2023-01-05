@@ -1,9 +1,9 @@
 import React from "react";
 import {Layout, Tabs} from "antd";
-import {AddProductForm} from "../../UserProfileForms/Product/AddProductForm/AddProductForm";
-import {ChangeProductTab} from "../../UserProfileForms/Product/ChangeProductForm/ChangeProductTab";
-import {DeleteProductForm} from "../../UserProfileForms/Product/DeleteProductForm/DeleteProductForm";
-import st from "./ActionWithProducts.module.css"
+import {AddProductForm} from "../ProductActionForm/AddProductForm/AddProductForm";
+import {ChangeProductTab} from "../ProductActionForm/ChangeProductForm/ChangeProductTab";
+import {DeleteProductForm} from "../ProductActionForm/DeleteProductForm/DeleteProductForm";
+import st from "./ProductTabs.module.css"
 
 const items = [
     {
@@ -27,7 +27,6 @@ export const ActionsWithProducts = () => {
                 className={st.productTabs}
                 defaultActiveKey="0"
                 tabPosition="top"
-                style={{height: 220}}
                 items={
                     items.map((el, i) => {
                         const id = String(i);

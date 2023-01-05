@@ -13,7 +13,6 @@ export const HeaderComponent = () => {
             <Row className={st.headerRow}>
                 <Col span={2}>
                     <NavBar/>
-
                 </Col>
                 <SignInComponent/>
             </Row>

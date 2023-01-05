@@ -63,10 +63,9 @@ export const cartSlice = createSlice({
         builder.addCase(addCartAction.pending, (state) => {
             state.isLoading = true
         })
-        builder.addCase(addCartAction.fulfilled, (state, action) => {
+        builder.addCase(addCartAction.fulfilled, (state) => {
             state.isLoading = false
             state.error = ''
-            // state.cart = action.payload
         })
         builder.addCase(addCartAction.rejected, (state, action) => {
             state.isLoading = false
@@ -76,10 +75,9 @@ export const cartSlice = createSlice({
         builder.addCase(updateCartAction.pending, (state) => {
             state.isLoading = true
         })
-        builder.addCase(updateCartAction.fulfilled, (state, action) => {
+        builder.addCase(updateCartAction.fulfilled, (state) => {
             state.isLoading = false
             state.error = ''
-            // state.cart = action.payload
         })
         builder.addCase(updateCartAction.rejected, (state, action) => {
             state.isLoading = false
@@ -89,10 +87,9 @@ export const cartSlice = createSlice({
         builder.addCase(deleteCartAction.pending, (state) => {
             state.isLoading = true
         })
-        builder.addCase(deleteCartAction.fulfilled, (state, action) => {
+        builder.addCase(deleteCartAction.fulfilled, (state) => {
             state.isLoading = false
             state.error = ''
-            // state.cart = action.payload
         })
         builder.addCase(deleteCartAction.rejected, (state, action) => {
             state.isLoading = false
@@ -101,5 +98,3 @@ export const cartSlice = createSlice({
     }
 
 })
-
-export default cartSlice.reducer;

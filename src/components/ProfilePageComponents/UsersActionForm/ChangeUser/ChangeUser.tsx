@@ -49,8 +49,7 @@ export const ChangeUser = () => {
             ...values,
             id: user?.id
         }
-        console.log(values)
-        dispatch(updateUserAction(values)).then(res => {
+        dispatch(updateUserAction(values)).then(() => {
                 openNotification("Change user info", `You changed your info successfully`, 'success')
             }
         ).catch(error =>

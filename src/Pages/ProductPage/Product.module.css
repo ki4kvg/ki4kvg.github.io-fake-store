@@ -3,16 +3,19 @@
 }
 
 .title{
+    margin-bottom: 10px;
     font-size: 30px;
 }
 
 .category {
+    margin-bottom: 30px;
     font-size: 14px;
     text-transform: capitalize;
-    text-decoration: underline;
 }
 
 .mainInfo {
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+    border-radius: 10px;
     background-color: white;
     padding: 25px;
     margin-top: 25px;
@@ -28,8 +31,9 @@
 }
 
 .description {
+    color: #555555;
     padding-top: 25px;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .priceRateCol {
@@ -60,8 +64,8 @@
     min-width: 80px;
 }
 
-.addToCartCol :global(.ant-row){
-    justify-content: center;
+.addToCart{
+    margin-top: 30px;
 }
 
 .alert {

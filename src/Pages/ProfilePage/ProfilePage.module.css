@@ -1,6 +1,7 @@
 .content {
     padding: 15px;
     min-height: calc(100vh - 80px);
+    /*height: calc(100vh - 80px) !important;*/
 }
 
 .title {
@@ -13,7 +14,12 @@
     align-items: center;
 }
 
+.tabs{
+    height: fit-content;
+}
+
 .tabsRow{
+    height: fit-content !important;
     justify-content: center;
 }
 

@@ -1,7 +1,7 @@
 import {Layout} from "antd";
 import React from "react";
 import st from "./SiderComponent.module.css"
-import {RadioGroupComponent} from "./RadioGroup/RadioGroupComponent";
+import {RadioGroupComponent} from "../RadioGroupCategories/RadioGroupComponent";
 
 export const SiderComponent = () => {
 

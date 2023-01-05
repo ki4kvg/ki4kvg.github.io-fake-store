@@ -25,9 +25,8 @@ export const DeleteUser = () => {
                 form.resetFields();
                 onFinish(values);
             })
-            .catch((info) => {
+            .catch(() => {
                 openNotification("Delete info", `You typed wrong confirmation`, 'error')
-                console.log("Validate fail", info)
             });
     };
 
@@ -38,7 +37,7 @@ export const DeleteUser = () => {
     const onFinish = (values: any) => {
         if (values.confirmation === "Yes") {
             setIsModalOpen(false);
-            dispatch(deleteUserAction(user?.id)).then(res => {
+            dispatch(deleteUserAction(user?.id)).then(() => {
                     openNotification("Delete info", `Delete have been completed successfully.`, 'success')
                 }
             ).catch(error =>

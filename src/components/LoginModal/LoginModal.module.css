@@ -1,3 +1,7 @@
 .regButton {
     margin-right: 10px;
 }
+
+.modal{
+    max-width: 400px;
+}

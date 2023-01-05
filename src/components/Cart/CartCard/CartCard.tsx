@@ -1,28 +1,19 @@
-import {Avatar, Card, Checkbox, Col, Row} from "antd";
+import {Avatar, Card, Col, Row} from "antd";
 import Meta from "antd/es/card/Meta";
-import {useState} from "react";
 import st from "./CartCard.module.css"
 import {useNavigate} from "react-router-dom";
-import {CheckboxChangeEvent} from "antd/es/checkbox";
 import {DeleteOutlined} from '@ant-design/icons'
-import {useAppDispatch, useAppSelector} from "../../../Hooks/hooks";
+import {useAppDispatch} from "../../../Hooks/hooks";
 import {deleteCartAction} from "../../../store/actions/productActions";
 import {openNotification} from "../../Notification/Notification";
 
-const CartCard = ({p, ...props}: any) => {
-    const [checkValue, setCheckedValue] = useState()
+const CartCard = ({p, cartId}: any) => {
 
     const navigate = useNavigate()
     const dispatch = useAppDispatch()
-    const {cart} = useAppSelector(state => state.cartReducer)
-
-    const onChange = (e: CheckboxChangeEvent) => {
-        setCheckedValue(e.target.value);
-        console.log(checkValue)
-    };
 
     const onDelete = () => {
-        dispatch(deleteCartAction(cart?.id)).then((res: any) => {
+        dispatch(deleteCartAction(cartId)).then(() => {
             openNotification(`Product delete info`, `Product had been deleted successfully.`, 'success')
         }).catch(error => {
             openNotification(`Product delete info`, `Something went wrong. Error: ${error}`, 'error')
@@ -31,22 +22,25 @@ const CartCard = ({p, ...props}: any) => {
 
     return (
         <Row className={st.cardRow}>
-            <Col span={20}>
+            <Col md={24} lg={20}>
                 <Card
-                    onClick={() => navigate(`/products/${p.id}`)}
                     className={st.card}
-                    hoverable={true}>
-                    <Meta
-                        className={st.cardMeta}
-                        avatar={<Avatar src={p.image}/>}
-                        title={p.title}
-                        description={p.price}
-                    />
+                    hoverable={true}
+                    extra={
+                        <Row className={st.cartExtra}>
+                            <DeleteOutlined className={st.icon} title={"Delete product"} onClick={onDelete}/>
+                        </Row>
+                    }>
+                    <div onClick={() => navigate(`/products/${p.id}`)}>
+                        <Meta
+                            className={st.cardMeta}
+                            avatar={<Avatar src={p.image}/>}
+
+                            title={p.title}
+                            description={"$" + p.price}
+                        />
+                    </div>
                 </Card>
-                <Row>
-                    <Checkbox value={p.id} onChange={onChange} className={st.checkBox}>Select product</Checkbox>
-                    <DeleteOutlined className={st.icon} title={"Delete product"} onClick={onDelete}/>
-                </Row>
             </Col>
         </Row>
     )

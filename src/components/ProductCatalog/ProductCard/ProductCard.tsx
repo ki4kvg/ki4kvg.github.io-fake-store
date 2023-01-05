@@ -8,7 +8,7 @@ import {addCartAction} from "../../../store/actions/productActions";
 import {useAppDispatch, useAppSelector} from "../../../Hooks/hooks";
 import {openNotification} from "../../Notification/Notification";
 
-const ProductCard = ({p, ...props}: any) => {
+const ProductCard = ({p}: any) => {
 
     const [loading] = useState(false)
 
@@ -27,32 +27,37 @@ const ProductCard = ({p, ...props}: any) => {
             products: [{productId: p.id, quantity: 1}]
         }
         dispatch(addCartAction(addProduct)).then((res: any) => {
-            openNotification(`Product add info`, `Product had been added successfully. Cart ID ${res.payload.id}`, 'success' )
+            openNotification(`Product add info`, `Product had been added successfully. Cart ID ${res.payload.id}`, 'success')
         }).catch(error => {
-            openNotification(`Product add info`, `Something went wrong. Error: ${error}`, 'error' )
+            openNotification(`Product add info`, `Something went wrong. Error: ${error}`, 'error')
         })
     }
 
     return (
         <Col span={24} className={st.cardColumn}>
             <Card loading={loading}
-                  onClick={() => navigate(`/products/${p.id}`)}
                   className={st.card}
-                  hoverable={true}>
-                <Meta
-                    className={st.cardMeta}
-                    avatar={<Avatar src={p.image}/>}
-                    title={p.title}
-                    description={p.price + "$"}
-                />
+                  hoverable={true}
+                  extra={
+                      <Row className={st.cartExtra}>
+                          {isLogin ?
+                              <ShoppingCartOutlined onClick={addToCart} className={st.icon}/>
+                              :
+                              <></>
+                          }
+                      </Row>
+                  }
+            >
+                <div onClick={() => navigate(`/products/${p.id}`)}>
+                    <Meta
+                        className={st.cardMeta}
+                        avatar={<Avatar src={p.image}/>}
+                        title={p.title}
+                        description={p.price + "$"}
+                    />
+                </div>
             </Card>
-            <Row className={st.iconRow}>
-                {isLogin ?
-                    <ShoppingCartOutlined onClick={addToCart} className={st.icon}/>
-                    :
-                    <></>
-                }
-            </Row>
+
         </Col>
     )
 }

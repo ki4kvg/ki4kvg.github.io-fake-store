@@ -34,31 +34,26 @@
     justify-content: center;
 }
 
-.checkBox{
-    font-size: 20px;
-    padding-left: 20px;
-    padding-top: 20px;
-}
-
-.checkBox span {
-    min-height: 25px;
-    min-width: 25px;
-}
-
-.checkBox input {
-    min-height: 25px;
-    min-width: 25px;
-}
-
 .icon svg {
+    transition-duration: 0.3s;
+    border-radius: 6px;
+    padding: 10px;
     color: black;
     min-height: 45px;
     min-width: 45px;
 }
 
+.icon :hover {
+    background-color: red;
+    color: whitesmoke;
+}
+
 .icon {
     margin-left: 10px;
-    margin-top: 10px;
+}
+
+.cartExtra{
+    padding: 10px 0;
 }
 
 @media (max-width: 480px) {

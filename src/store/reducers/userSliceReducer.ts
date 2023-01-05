@@ -70,10 +70,9 @@ export const userSlice = createSlice({
         builder.addCase(updateUserAction.pending, (state) => {
             state.isLoading = true
         })
-        builder.addCase(updateUserAction.fulfilled, (state, action) => {
+        builder.addCase(updateUserAction.fulfilled, (state) => {
             state.isLoading = false
             state.error = ''
-            // state.user = action.payload
         })
         builder.addCase(updateUserAction.rejected, (state, action) => {
             state.isLoading = false
@@ -83,10 +82,9 @@ export const userSlice = createSlice({
         builder.addCase(deleteUserAction.pending, (state) => {
             state.isLoading = true
         })
-        builder.addCase(deleteUserAction.fulfilled, (state, action) => {
+        builder.addCase(deleteUserAction.fulfilled, (state) => {
             state.isLoading = false
             state.error = ''
-            // state.user = action.payload
         })
         builder.addCase(deleteUserAction.rejected, (state, action) => {
             state.isLoading = false
@@ -95,5 +93,3 @@ export const userSlice = createSlice({
     }
 
 })
-
-export default userSlice.reducer;

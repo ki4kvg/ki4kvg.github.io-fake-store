@@ -7,16 +7,10 @@ import {useAppDispatch, useAppSelector} from "../../Hooks/hooks";
 export const SelectorComponent = () => {
 
     const dispatch = useAppDispatch()
-    const {product, products} = useAppSelector(state => state.productReducer)
+    const {products} = useAppSelector(state => state.productReducer)
 
     const onChange = (value: string | undefined) => {
         dispatch(getProductAction(value))
-        console.log(`selected ${value}`);
-        console.log(product)
-    };
-
-    const onSearch = (value: any) => {
-        console.log('search:', value);
     };
 
     const searchOptions = products?.map(p => {
@@ -36,7 +30,6 @@ export const SelectorComponent = () => {
             placeholder="Select a product"
             optionFilterProp="children"
             onChange={onChange}
-            onSearch={onSearch}
             filterOption={(input, option) =>
                 (option?.label ?? '').toLowerCase().includes(input.toLowerCase())
             }
