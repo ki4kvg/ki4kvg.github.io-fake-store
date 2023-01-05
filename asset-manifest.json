@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/ki4kvg.github.io-fake-store/static/css/main.de66c7fd.css",
+    "main.js": "/ki4kvg.github.io-fake-store/static/js/main.d0af7f72.js",
+    "index.html": "/ki4kvg.github.io-fake-store/index.html",
+    "main.de66c7fd.css.map": "/ki4kvg.github.io-fake-store/static/css/main.de66c7fd.css.map",
+    "main.d0af7f72.js.map": "/ki4kvg.github.io-fake-store/static/js/main.d0af7f72.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.de66c7fd.css",
+    "static/js/main.d0af7f72.js"
+  ]
+}
