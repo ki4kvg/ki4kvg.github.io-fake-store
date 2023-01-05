@@ -38,13 +38,9 @@ const ProductCard = ({p}: any) => {
             <Card loading={loading}
                   className={st.card}
                   hoverable={true}
-                  extra={
+                  extra={isLogin &&
                       <Row className={st.cartExtra}>
-                          {isLogin ?
-                              <ShoppingCartOutlined onClick={addToCart} className={st.icon}/>
-                              :
-                              <></>
-                          }
+                          <ShoppingCartOutlined onClick={addToCart} className={st.icon}/>
                       </Row>
                   }
             >
