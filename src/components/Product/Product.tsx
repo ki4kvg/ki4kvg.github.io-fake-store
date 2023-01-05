@@ -1,19 +1,36 @@
 import React, {useEffect} from "react";
 import {useAppDispatch, useAppSelector} from "../../Hooks/hooks";
-import {getProductAction} from "../../store/actions/productActions";
+import {addCartAction, getProductAction} from "../../store/actions/productActions";
 import {useNavigate, useParams} from "react-router-dom";
-import {Col, Image, Rate, Row, Spin} from "antd";
+import {Alert, Button, Col, Image, Rate, Row} from "antd";
 import st from "./Product.module.css"
-import {ProductCardForCart} from "./ProductCardForCart/ProductCardForCart";
 import {Spinner} from "../Spinner/Spinner";
+import {openNotification} from "../Notification/Notification";
 
 export const Product = () => {
 
     const dispatch = useAppDispatch()
     const {productId} = useParams()
     const navigate = useNavigate()
-
+    const {cart} = useAppSelector(state => state.cartReducer)
+    const {isLogin} = useAppSelector(state => state.authReducer)
     const {product} = useAppSelector(state => state.productReducer)
+
+    const addToCart = () => {
+        const newDate = new Date()
+        const date = newDate.toLocaleDateString('en-US')
+        const addProduct = {
+            userId: cart?.userId,
+            date: date,
+            products: [{productId: product?.id, quantity: 1}]
+        }
+        dispatch(addCartAction(addProduct)).then((res: any) => {
+            openNotification(`Product add info`, `Product had been added successfully. Cart ID ${res.payload.id}`, 'success')
+        }).catch(error => {
+            openNotification(`Product add info`, `Something went wrong. Error: ${error}`, 'error')
+        })
+    }
+
 
     useEffect(() => {
         dispatch(getProductAction(productId))
@@ -40,8 +57,12 @@ export const Product = () => {
                     <Row className={st.price}>Price: {product?.price}$</Row>
                     <Row className={st.description}>{product?.description}</Row>
                 </Col>
-                <Col span={4} className={st.addToCartCol}>
-                    <Row><ProductCardForCart key={product?.id} product={product}/></Row>
+                <Col span={12}>
+                    {isLogin ?
+                        <Button type={"primary"} onClick={addToCart}>Add to Cart</Button>
+                        :
+                        <Alert message="Please log in to add products to your cart" type="info"/>
+                    }
                 </Col>
             </Row>
         </Col>

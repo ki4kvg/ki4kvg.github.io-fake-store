@@ -1,4 +1,4 @@
-import {Avatar, Card, Checkbox, Col, Row, InputNumber} from "antd";
+import {Avatar, Card, Checkbox, Col, Row} from "antd";
 import Meta from "antd/es/card/Meta";
 import {useState} from "react";
 import st from "./CartCard.module.css"
@@ -6,7 +6,7 @@ import {useNavigate} from "react-router-dom";
 import {CheckboxChangeEvent} from "antd/es/checkbox";
 import {DeleteOutlined} from '@ant-design/icons'
 import {useAppDispatch, useAppSelector} from "../../../Hooks/hooks";
-import {deleteCartAction, updateCartAction} from "../../../store/actions/productActions";
+import {deleteCartAction} from "../../../store/actions/productActions";
 import {openNotification} from "../../Notification/Notification";
 
 const CartCard = ({p, ...props}: any) => {
@@ -23,9 +23,9 @@ const CartCard = ({p, ...props}: any) => {
 
     const onDelete = () => {
         dispatch(deleteCartAction(cart?.id)).then((res: any) => {
-            openNotification(`Product delete info`, `Product had been deleted successfully.`, 'success' )
+            openNotification(`Product delete info`, `Product had been deleted successfully.`, 'success')
         }).catch(error => {
-            openNotification(`Product delete info`, `Something went wrong. Error: ${error}`, 'error' )
+            openNotification(`Product delete info`, `Something went wrong. Error: ${error}`, 'error')
         })
     };
 
@@ -43,12 +43,8 @@ const CartCard = ({p, ...props}: any) => {
                         description={p.price}
                     />
                 </Card>
-            </Col>
-            <Col span={4}>
                 <Row>
                     <Checkbox value={p.id} onChange={onChange} className={st.checkBox}>Select product</Checkbox>
-                </Row>
-                <Row>
                     <DeleteOutlined className={st.icon} title={"Delete product"} onClick={onDelete}/>
                 </Row>
             </Col>

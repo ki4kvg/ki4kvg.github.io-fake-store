@@ -53,7 +53,6 @@ export const ChangeProductTab = () => {
                 <Form
                     form={form}
                     className={st.form}
-                    wrapperCol={{span: 24}}
                     initialValues={InitialValues}
                     name="product"
                     onFinish={onFinish}

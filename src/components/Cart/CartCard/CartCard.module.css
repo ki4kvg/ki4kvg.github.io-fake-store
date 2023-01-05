@@ -1,5 +1,5 @@
 .card {
-    min-width: 850px;
+    min-width: 300px;
 }
 
 .cardMeta div {
@@ -31,15 +31,13 @@
 }
 
 .cardRow {
-    display: flex;
-    flex-direction: row;
     justify-content: center;
-    align-items: center;
 }
 
 .checkBox{
     font-size: 20px;
     padding-left: 20px;
+    padding-top: 20px;
 }
 
 .checkBox span {
@@ -60,5 +58,12 @@
 
 .icon {
     margin-left: 10px;
-    margin-top: 50px;
+    margin-top: 10px;
+}
+
+@media (max-width: 480px) {
+    .cardMeta span {
+        min-height: 100px;
+        min-width: 100px;
+    }
 }

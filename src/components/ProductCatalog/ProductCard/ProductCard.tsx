@@ -34,7 +34,7 @@ const ProductCard = ({p, ...props}: any) => {
     }
 
     return (
-        <Col  span={12}>
+        <Col span={24} className={st.cardColumn}>
             <Card loading={loading}
                   onClick={() => navigate(`/products/${p.id}`)}
                   className={st.card}

@@ -17,14 +17,11 @@
 
 
 .sider {
-    /*border-top: solid 5px black;*/
-    /*border-radius: 10px;*/
-    /*margin-left: 10px;*/
+    margin-right: 24px;
 }
 
 .sider :global(.ant-layout-sider-children){
     background: linear-gradient(#d06255, #ec985c);
-    /*border-radius: 10px;*/
 }
 
 .checkAllRadio {

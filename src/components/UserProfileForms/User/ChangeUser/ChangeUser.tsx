@@ -61,7 +61,6 @@ export const ChangeUser = () => {
     return (
         <Form
             initialValues={InitialValues}
-            wrapperCol={{span: 24}}
             className={st.form}
             layout={"vertical"}
             form={form}

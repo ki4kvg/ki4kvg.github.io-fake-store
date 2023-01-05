@@ -31,8 +31,10 @@ const ProductCatalog = () => {
             }
             return filteredProds.map((p: productType) => <ProductCard key={p.id} p={p}/>)
         }
-        return null
+        return undefined
     }
+
+    const filteredProds = filteredProducts()
 
     useEffect(() => {
         dispatch(getProductsAction())
@@ -40,7 +42,6 @@ const ProductCatalog = () => {
 
     return (
         <Layout>
-
             <SiderComponent/>
             <Content style={{overflow: "hidden"}} className={st.content}>
                 <Input
@@ -50,11 +51,10 @@ const ProductCatalog = () => {
                     size="large"
                     onChange={onSearch}
                 />
-
                 <Row className={st.CardRow}
                      justify={"center"}
-                     gutter={[16, 16]}>
-                    {isLoading ? <Spinner/> : filteredProducts()}
+                     gutter={16}>
+                    {isLoading ? <Spinner/> : filteredProds}
                 </Row>
             </Content>
         </Layout>

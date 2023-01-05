@@ -8,7 +8,6 @@ import st from "./ProfilePage.module.css";
 import {ActionsWithProducts} from "./ActionsWithProduct/ActionsWithProduct";
 import {ActionsWithUser} from "./ActionsWithUser/ActionsWithUser";
 import {openNotification} from "../Notification/Notification";
-import {authSlice} from "../../store/reducers/authSliceReducer";
 import {userSlice} from "../../store/reducers/userSliceReducer";
 
 const items = [
@@ -58,8 +57,9 @@ export const ProfilePage = () => {
                 </Row>
                 <Row className={st.tabsRow}>
                     <Tabs
+                        className={st.tabs}
                         defaultActiveKey="0"
-                        tabPosition="left"
+                        tabPosition="top"
                         style={{height: 220}}
                         items={
                             items.map((el, i) => {
