@@ -11,7 +11,7 @@ export const AddProductForm = () => {
     const dispatch = useAppDispatch()
 
     const onFinish = (values: productType) => {
-        dispatch(addProductAction(values)).then(res => {
+        dispatch(addProductAction(values)).then(() => {
                 openNotification("Add product info", `Product have been added successfully.`, 'success')
             }
         ).catch(error =>

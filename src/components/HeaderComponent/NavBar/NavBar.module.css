@@ -1,0 +1,58 @@
+:global(.ant-drawer-content-wrapper) {
+    max-width: 250px;
+}
+
+.linkCol {
+    min-width: 200px;
+}
+
+
+.drawer :global(.ant-drawer-wrapper-body){
+    color: whitesmoke ;
+    background-color: #001529 ;
+}
+
+.drawer :global(.ant-drawer-title){
+    color: whitesmoke ;
+}
+
+.drawer :global(.ant-drawer-header-title) button{
+    color: whitesmoke ;
+}
+
+.menuIcon svg {
+    margin-top: 5px;
+    min-width: 20px;
+    min-height: 20px;
+}
+
+.catalogLinkMain {
+    color: whitesmoke;
+    letter-spacing: 2px;
+    font-size: 24px;
+}
+
+.catalogLinkDrawer {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+.menu{
+    background: transparent;
+}
+
+.menu span {
+    color: white;
+}
+
+@media (min-width: 992px) {
+    .menu {
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+    .catalogLinkMain {
+        display: none;
+    }
+}
+

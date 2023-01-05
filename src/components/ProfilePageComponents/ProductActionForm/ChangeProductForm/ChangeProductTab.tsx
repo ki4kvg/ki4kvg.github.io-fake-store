@@ -32,7 +32,7 @@ export const ChangeProductTab = () => {
             ...values,
             id: product?.id
         }
-        dispatch(updateProductAction(values)).then(res => {
+        dispatch(updateProductAction(values)).then(() => {
                 openNotification("Update product info", `Product have been updated successfully.`, 'success')
             }
         ).catch(error =>
